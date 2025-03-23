@@ -33,9 +33,13 @@ html, body {
   align-items: center;
   border-radius: 2em;
   border: 1px solid white;
+  color:white;
+  cursor: pointer;
 }
 
 .characterInfo{
+  display: flex;
+  justify-content: space-around;
   height: 550px;
   padding: 30px;
   font-size: 24px;
@@ -58,4 +62,14 @@ input[type="text"] {
 #image{
   width: 300px;
   height: 300px;
+}
+#character-form{
+  justify-items: left;
+  padding:10px;
+  border-radius:8px;
+  box-shadow: 10px 10px 8px 10px rgba(0, 0, 0, 0.2);}
+#character-form input{
+  border-radius: 8px;
+  width:auto;
+  margin:3px;
 }

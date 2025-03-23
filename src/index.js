@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let characterInfo = {};
-    let characterData = [];
-    let characterID ;
+    let characterInfo = {};//individual character information
+    let characterData = [];//all characters information
+    let characterID ;// my current character id
   
     // Fetch all characters data
     function getData() {
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addvote();
     });
 
-
+//function for vote reset
     function resetVote(){
         fetch(`http://localhost:3000/characters/${characterID}`, {
             method: 'PATCH',
@@ -116,10 +116,34 @@ document.querySelector("#reset-btn").addEventListener("click",()=>{
     resetVote();
 })
 
-    // Initialize by fetching data
+//listen for add new character click
+document.querySelector("#character-form").addEventListener("submit",()=>{
+event.preventDefault();
+addNew();
+})
+//function for adding new character
+function addNew(){
+    newName=document.querySelector("#newName").value
+    newImage=document.querySelector("#image-url").value
+    let newCharacter={
+        name:newName,
+        image:newImage,
+        votes:0
+    }
+    //alert(`added ${newName} with url\n ${newImage}`)
+    fetch('http://localhost:3000/characters', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newCharacter)
+      })
+
+}
+
+    // main function to run program
     function main() {
       getData();
     }
     main();
   });
-  
