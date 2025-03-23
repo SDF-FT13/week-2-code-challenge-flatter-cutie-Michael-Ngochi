@@ -4,37 +4,43 @@
       "id": "1",
       "name": "Mr. Cute",
       "image": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWk3MzVpZWFnY3EwN2RhdDl6MGk4aWtpbWduODRwNmd3MGllc2JwcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/W0VuY0dTxH9L6vLUJ2/giphy.gif",
-      "votes": 25
+      "votes": 108
     },
     {
       "id": "2",
       "name": "Mx. Monkey",
       "image": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZtcXFoamI0NmJ3cjE0cG9vMjl1bGt0cDFneDZrNWhobDBvb2d5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/sy2a3KzytZEIz1RbzT/giphy.gif",
-      "votes": 36
+      "votes": 96
     },
     {
       "id": "3",
       "name": "Ms. Zebra",
       "image": "https://media2.giphy.com/media/20G9uNqE3K4dRjCppA/source.gif",
-      "votes": 50
+      "votes": 51
     },
     {
       "id": "4",
       "name": "Dr. Lion",
       "image": "http://bestanimations.com/Animals/Mammals/Cats/Lions/animated-lion-gif-11.gif",
-      "votes": 0
+      "votes": 47
     },
     {
       "id": "5",
       "name": "Mme. Panda",
       "image": "https://media.giphy.com/media/ALalVMOVR8Qw/giphy.gif",
-      "votes": 45
+      "votes": 50
     },
     {
       "id": "4b4b",
       "name": "Ducky",
       "image": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnpvd2ZsanNlMW1yeHp4NHd4b3N1YnZidXQyZndsem1qcGs5anc5NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cCOVfFwDI3awdse5A3/giphy.gif",
-      "votes": 10
+      "votes": 105
+    },
+    {
+      "id": "5786",
+      "name": "Mr.Rex",
+      "image": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXN5aHMwejc4OWU4MzJrZnY3N3dueTU0ODN3M3FwdjVpMThvbnhqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/U2ivlljp6AvBK/giphy.gif",
+      "votes": 110
     }
   ]
 }

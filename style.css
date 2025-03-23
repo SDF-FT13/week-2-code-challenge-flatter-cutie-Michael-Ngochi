@@ -18,15 +18,19 @@ html, body {
   height: 15vh;
   background: rgb(49, 109, 179);
   display: flex;
-  justify-content: space-around;
+  overflow: auto;
+  white-space: nowrap;
+  justify-content: center;
   align-items: center;
   padding-bottom: 3vh;
+  scrollbar-width: thin;
 }
 
 #character-bar span {
+  margin:5px;
   padding: 1%;
-  height: 80%;
-  width: 8vw;
+  height:a;
+  width: auto;
   display: flex;
   justify-content: center;
   font-size: 3vh;
@@ -35,6 +39,13 @@ html, body {
   border: 1px solid white;
   color:white;
   cursor: pointer;
+  display: inline;
+  text-align: center;
+}
+
+#character-bar span:hover{
+  background-color: white;
+  color: rgb(49, 109, 179);
 }
 
 .characterInfo{
@@ -53,6 +64,15 @@ input[type="submit"], button {
   font-size: 18px;
   border-radius: 6px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  color: rgb(49, 109, 179);
+  background-color: white;
+}
+button:hover {
+  color: rgb(49, 109, 179);
+  background-color: white;
 }
 
 input[type="text"] {
@@ -72,4 +92,12 @@ input[type="text"] {
   border-radius: 8px;
   width:auto;
   margin:3px;
+}
+.vote-score{
+  background-color: rgb(19, 182, 231);
+  color: rgb(0, 0, 0) !important;
+  padding:2px;
+  border-width:0 !important;
+  border-radius:4px !important;
+  font-size: 20px !important;
 }

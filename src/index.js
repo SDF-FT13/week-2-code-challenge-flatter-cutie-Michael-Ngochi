@@ -14,22 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(data => {
            characterData = data;
+           characterData = [...characterData].sort((a, b) => b.votes - a.votes);
+           //console.log(characterData);
           displayAllCharacters();
         })
         .catch(error => console.error('Fetch error:', error));
+      
     }
   
     // Display all characters
     function displayAllCharacters() {
       let charnames = document.getElementById("character-bar");
-      //charnames.innerHTML = ''; // Clear existing characters before rendering new ones
-  
+      charnames.innerHTML = ''; // Clear existing characters before rendering new ones
       for (const animal of characterData) {
         let charname = document.createElement("span");
         charname.id = animal.id;
-        charname.innerHTML = animal.name;
+        charname.innerHTML = `${animal.name} <br><span class="vote-score">${animal.votes}</span>`;
         charnames.appendChild(charname);
-  
+
         // Listen for click on character name
         charname.addEventListener("click", () => {
           characterID = animal.id;
@@ -83,11 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       })
         .then(response => response.json())
-        // .then(updatedCharacter => {
+        .then(updatedCharacter => {
         //   console.log('Updated character:', updatedCharacter);
         //   alert(`Votes successfully added ${voteInput} votes to ${updatedCharacter.name}`);
-        // })
+        document.getElementById("vote-count").innerHTML = updatedCharacter.votes;
+        getData();
+         })
         .catch(error => console.error('Error updating votes:', error));
+
+      displayAllCharacters();
+
     }
 
 
@@ -108,12 +115,22 @@ document.addEventListener("DOMContentLoaded", () => {
               votes: 0
             })
           })
+          .then(updatedCharacter => {
+            characterInfo.votes = 0;
+            document.getElementById("vote-count").innerHTML = 0;
+            document.getElementById("votes").value=null
+            getData(); // ✅ Re-fetch and re-render character list
+          })
+
     }
-   
+
 //listen for vote reset
 document.querySelector("#reset-btn").addEventListener("click",()=>{
     event.preventDefault();
     resetVote();
+    document.getElementById("vote-count").innerHTML = 0;
+    getData();
+    displayAllCharacters();
 })
 
 //listen for add new character click
@@ -138,6 +155,10 @@ function addNew(){
         },
         body: JSON.stringify(newCharacter)
       })
+      .then(res => res.json())
+  .then(created => {
+    getData(); // ✅ Refresh list to show new character
+  })
 
 }
 
